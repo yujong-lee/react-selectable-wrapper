@@ -56,6 +56,7 @@ describe('Selectable', () => {
 
         fireEvent.click(getByTestId('1'));
 
+        expect(onClick).not.toBeCalledWith([false, true]);
         expect(onClick).toBeCalledWith([true, true]);
       });
     });
@@ -84,6 +85,7 @@ describe('Selectable', () => {
 
         fireEvent.click(getByTestId('1'));
 
+        expect(onClick).not.toBeCalledWith(1);
         expect(onClick).toBeCalledWith(0);
       });
     });
